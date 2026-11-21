@@ -1,0 +1,27 @@
+# mvbench configuration. Anything omitted falls back to the defaults in mvbench.py.
+
+# Survey these countries. One relay per city. Known-good relays go first.
+# A relay that has already tested consistently slow is skipped for another in that city.
+countries = ["us", "ca", "mx"]
+benchmark_countries = ["se"]   # measured every run and used as the baseline
+benchmark_per_run = 4          # Sweden relays per run (current exit is included)
+relays_per_run = 26            # North America relays per run (one per city)
+
+cities = []                    # e.g. ["lax", "sea", "tor"] to restrict the survey
+ownership = "any"              # any | owned | rented
+providers = []                 # e.g. ["DataPacket", "Tzulo"]; empty = any
+
+download_max_time = 10         # seconds per download (~up to 60 MB on a slow exit)
+window_days = 14               # recent window used by report / recommend
+min_samples = 2                # tests needed before a relay can be recommended
+top_n = 5
+custom_list = "mvbench-best"
+max_ping_ms = 0                # 0 = ignore latency when recommending
+seconds_per_relay = 20         # planning estimate only
+
+# Optional: URLs that must respond with the expected status through the relay.
+# A relay whose most recent test failed a check is excluded from recommendations.
+# [[service_checks]]
+# name = "example"
+# url = "https://www.example.com/"
+# expect_status = 200

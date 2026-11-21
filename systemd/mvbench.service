@@ -1,0 +1,9 @@
+[Unit]
+Description=Benchmark a batch of Mullvad relays
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Projects/mullvad-speedtest
+ExecStart=/usr/bin/python3 %h/Projects/mullvad-speedtest/mvbench.py run --plain
+TimeoutStartSec=30min

@@ -1,0 +1,10 @@
+[Unit]
+Description=Run mvbench every 3 hours
+
+[Timer]
+OnCalendar=*-*-* 00/3:17:00
+RandomizedDelaySec=20m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

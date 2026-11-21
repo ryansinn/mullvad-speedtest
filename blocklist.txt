@@ -1,0 +1,4 @@
+# Relays to never test or recommend. One glob pattern per line, e.g.:
+#   us-lax-wg-403      a single relay
+#   us-mia-*           a whole city
+# Manage with: ./mvbench.py block add|rm|ls PATTERN [--reason "..."]
